@@ -1,0 +1,62 @@
+<section class="dashboard">
+  <header class="dashboard-header">
+    <div>
+      <h1 class="title">Dashboard</h1>
+      <p class="subtitle">Intern & Batch Data Overview</p>
+    </div>
+
+    <div class="status" *ngIf="loading">
+      <mat-progress-spinner diameter="24" mode="indeterminate"></mat-progress-spinner>
+      <span>Loading...</span>
+    </div>
+  </header>
+
+  <section class="stats-grid" aria-label="Statistics">
+    <mat-card class="stat-card">
+      <mat-card-content>
+        <div class="stat-label">Total Interns</div>
+        <div class="stat-value">{{ stats?.totalInterns ?? '-' }}</div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <mat-card-content>
+        <div class="stat-label">Total Batches</div>
+        <div class="stat-value">{{ stats?.totalBatches ?? '-' }}</div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <mat-card-content>
+        <div class="stat-label">Free ID Count</div>
+        <div class="stat-value">{{ stats?.freeIds ?? '-' }}</div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <mat-card-content>
+        <div class="stat-label">Premium ID Count</div>
+        <div class="stat-value">{{ stats?.premiumIds ?? '-' }}</div>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+  <section class="grid-2">
+    <div class="panel">
+      <h2 class="panel-title">Analytics</h2>
+      <mat-divider />
+      <div class="panel-body">
+        <p class="muted">(Placeholder) Add charts/analytics here.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2 class="panel-title">Recent Activity</h2>
+      <mat-divider />
+      <div class="panel-body">
+        <p class="muted">(Placeholder) Add activity feed here.</p>
+      </div>
+    </div>
+  </section>
+</section>
+

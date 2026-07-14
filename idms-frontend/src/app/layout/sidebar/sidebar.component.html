@@ -1,0 +1,33 @@
+<div class="brand">
+  <mat-icon class="brand-icon">account_balance</mat-icon>
+  <div class="brand-text">
+    <div class="brand-title">IDMS</div>
+    <div class="brand-subtitle">Intern & Batch System</div>
+  </div>
+</div>
+
+<nav class="nav" aria-label="Sidebar navigation">
+  <a mat-button routerLink="/dashboard" routerLinkActive="active" class="nav-item">
+    <mat-icon>dashboard</mat-icon>
+    <span>Dashboard</span>
+  </a>
+
+  <div class="section-title">Management</div>
+
+  <a mat-button routerLink="/interns" routerLinkActive="active" class="nav-item">
+    <mat-icon>groups</mat-icon>
+    <span>Intern Management</span>
+  </a>
+
+  <a mat-button routerLink="/batches" routerLinkActive="active" class="nav-item">
+    <mat-icon>work</mat-icon>
+    <span>Batch Management</span>
+  </a>
+
+  <div class="quick-actions">
+    <div class="quick-title">Quick Links</div>
+    <a mat-button routerLink="/interns/add" class="quick-link" *ngIf="true">Add Intern</a>
+    <a mat-button routerLink="/batches/add" class="quick-link" *ngIf="true">Add Batch</a>
+  </div>
+</nav>
+

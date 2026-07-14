@@ -1,0 +1,46 @@
+<mat-sidenav-container class="app-container">
+  <mat-sidenav mode="side" opened class="app-sidenav">
+    <div class="brand">
+      <mat-icon class="brand-icon">account_balance</mat-icon>
+      <div class="brand-text">
+        <div class="brand-title">IDMS</div>
+        <div class="brand-subtitle">Intern & Batch System</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a mat-button routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a mat-button routerLink="/interns" routerLinkActive="active">Interns</a>
+      <a mat-button routerLink="/batches" routerLinkActive="active">Batches</a>
+    </nav>
+
+    <div class="spacer"></div>
+
+    <div class="nav-help">
+      <div class="nav-help-title">Quick Links</div>
+      <a mat-button routerLink="/interns/add">Add Intern</a>
+      <a mat-button routerLink="/batches/add">Add Batch</a>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="topbar">
+      <button mat-icon-button class="mobile-menu" aria-label="Menu" type="button">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <div class="topbar-title">IDMS</div>
+
+      <span class="spacer"></span>
+      <div class="topbar-meta">
+        <mat-icon class="meta-icon" aria-hidden="true">security</mat-icon>
+        <span class="meta-text">Corporate Admin</span>
+      </div>
+    </mat-toolbar>
+
+    <main class="main-content">
+      <router-outlet />
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

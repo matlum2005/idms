@@ -1,0 +1,42 @@
+<div class="page">
+  <div class="page-header">
+    <h1>Create Batch</h1>
+    <div class="page-actions">
+      <button mat-button routerLink="/batches">Back</button>
+    </div>
+  </div>
+
+  <mat-card appearance="outlined" class="card">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="grid">
+        <mat-form-field appearance="outline">
+          <mat-label>Start Date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="pickerStart"
+            formControlName="startDate"
+            (dateInput)="onStartDateChange($event)"
+          />
+          <mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
+          <mat-datepicker #pickerStart></mat-datepicker>
+          <mat-error *ngIf="form.controls.startDate.hasError('required')">
+            Start Date is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>End Date (auto)</mat-label>
+matInput [matDatepicker]="pickerEnd" formControlName="endDate" [disabled]="true" />
+<mat-datepicker-toggle matIconSuffix [for]="pickerEnd" [disabled]="true"></mat-datepicker-toggle>
+
+          <mat-datepicker #pickerEnd></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="footer">
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Create</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
+

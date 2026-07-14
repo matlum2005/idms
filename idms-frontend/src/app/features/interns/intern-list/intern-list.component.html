@@ -1,0 +1,104 @@
+<div class="page">
+  <div class="page-header">
+    <h1>Interns</h1>
+    <div class="page-actions">
+      <button mat-raised-button color="primary" routerLink="/interns/add">Add Intern</button>
+    </div>
+  </div>
+
+  <div class="toolbar" role="region" aria-label="Intern filters">
+    <mat-form-field appearance="outline">
+      <mat-label>Search</mat-label>
+      <input
+        matInput
+        placeholder="Name or Email"
+        [(ngModel)]="searchText"
+        (ngModelChange)="onSearchChange()"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Filter by Batch</mat-label>
+      <mat-select [(value)]="selectedBatchId" (selectionChange)="applyFilters()">
+        <mat-option [value]="null">All</mat-option>
+        <mat-option *ngFor="let b of batches" [value]="b.id">{{ b.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Filter by ID Card Type</mat-label>
+      <mat-select [(value)]="selectedIdCardType" (selectionChange)="applyFilters()">
+        <mat-option [value]="null">All</mat-option>
+        <mat-option value="FREE">FREE</mat-option>
+        <mat-option value="PREMIUM">PREMIUM</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="table-container" tabindex="0">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z2" aria-label="Interns table">
+      <!-- Intern ID -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Intern ID</th>
+        <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+      </ng-container>
+
+      <!-- Name -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+      </ng-container>
+
+      <!-- Email -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+        <td mat-cell *matCellDef="let row">{{ row.email }}</td>
+      </ng-container>
+
+      <!-- Mobile Number -->
+      <ng-container matColumnDef="mobileNumber">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Mobile Number</th>
+        <td mat-cell *matCellDef="let row">{{ row.mobileNumber }}</td>
+      </ng-container>
+
+      <!-- Batch -->
+      <ng-container matColumnDef="batchId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Batch</th>
+        <td mat-cell *matCellDef="let row">{{ row.batchId }}</td>
+      </ng-container>
+
+      <!-- ID Card Type -->
+      <ng-container matColumnDef="idCardType">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ID Card Type</th>
+        <td mat-cell *matCellDef="let row">{{ row.idCardType }}</td>
+      </ng-container>
+
+      <!-- Date Of Joining -->
+      <ng-container matColumnDef="dateOfJoining">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Date Of Joining</th>
+        <td mat-cell *matCellDef="let row">{{ row.dateOfJoining }}</td>
+      </ng-container>
+
+      <!-- Actions -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let row">
+          <div class="actions">
+            <button mat-button color="primary" [routerLink]="['/interns', row.id]">View</button>
+            <button mat-button color="accent" [routerLink]="['/interns', 'edit', row.id]">Edit</button>
+            <button mat-button color="warn" (click)="onDelete(row.id)">Delete</button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>
+

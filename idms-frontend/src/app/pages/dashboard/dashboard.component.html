@@ -1,0 +1,59 @@
+<section class="dashboard">
+  <div class="header">
+    <h2>Dashboard</h2>
+    <p>Intern & Batch overview</p>
+  </div>
+
+  <div class="cards">
+    <mat-card class="metric-card">
+      <mat-icon class="metric-icon" color="primary">group</mat-icon>
+      <div class="metric-content">
+        <div class="metric-label">Total Interns</div>
+        <div class="metric-value">{{ totals.totalInterns }}</div>
+      </div>
+    </mat-card>
+
+    <mat-card class="metric-card">
+      <mat-icon class="metric-icon" color="primary">storage</mat-icon>
+      <div class="metric-content">
+        <div class="metric-label">Total Batches</div>
+        <div class="metric-value">{{ totals.totalBatches }}</div>
+      </div>
+    </mat-card>
+
+    <mat-card class="metric-card">
+      <mat-icon class="metric-icon" color="primary">redeem</mat-icon>
+      <div class="metric-content">
+        <div class="metric-label">Free ID Count</div>
+        <div class="metric-value">{{ totals.freeIds }}</div>
+      </div>
+    </mat-card>
+
+    <mat-card class="metric-card">
+      <mat-icon class="metric-icon" color="primary">workspace_premium</mat-icon>
+      <div class="metric-content">
+        <div class="metric-label">Premium ID Count</div>
+        <div class="metric-value">{{ totals.premiumIds }}</div>
+      </div>
+    </mat-card>
+  </div>
+
+  <mat-card class="analytics-card">
+    <div class="analytics-header">
+      <h3>Analytics</h3>
+    </div>
+
+    <div class="analytics-grid">
+      @for (a of analytics; track a.title) {
+        <div class="analytics-item">
+          <mat-icon class="analytics-icon">{{ a.icon }}</mat-icon>
+          <div>
+            <div class="analytics-title">{{ a.title }}</div>
+            <div class="analytics-value">{{ a.value }}</div>
+          </div>
+        </div>
+      }
+    </div>
+  </mat-card>
+</section>
+

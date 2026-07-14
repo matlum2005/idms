@@ -1,0 +1,59 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.brand-name {
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.98;
+}
+
+.user-icon {
+  font-size: 22px;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu {
+    display: inline-flex;
+  }
+
+  .user-name {
+    display: none;
+  }
+}
+

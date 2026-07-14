@@ -1,0 +1,42 @@
+:root {
+  --app-bg: #f5f7fb;
+  --app-surface: #ffffff;
+  --app-border: rgba(17, 24, 39, 0.08);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.app-container {
+  height: 100vh;
+  background: var(--app-bg);
+}
+
+.app-sidenav {
+  width: 280px;
+  background: var(--app-surface);
+  border-right: 1px solid var(--app-border);
+}
+
+.app-content {
+  background: var(--app-bg);
+}
+
+.main-content {
+  padding: 16px;
+}
+
+@media (max-width: 768px) {
+  .app-sidenav {
+    width: 240px;
+  }
+
+  .main-content {
+    padding: 12px;
+  }
+}
+
+
+

@@ -1,0 +1,35 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+  background: #f5f7fb;
+}
+
+// Snackbar variants from NotificationService
+.snackbar-success .mat-mdc-snack-bar-surface {
+  background: #16a34a !important;
+  color: #fff !important;
+}
+
+.snackbar-error .mat-mdc-snack-bar-surface {
+  background: #dc2626 !important;
+  color: #fff !important;
+}
+
+.snackbar-info .mat-mdc-snack-bar-surface {
+  background: #1e40af !important;
+  color: #fff !important;
+}
+
+

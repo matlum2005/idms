@@ -1,0 +1,117 @@
+.app-container {
+  height: 100vh;
+  background: #f5f7fb;
+}
+
+.app-sidenav {
+  width: 270px;
+  background: #0f2238;
+  color: #fff;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  padding: 18px 16px;
+  align-items: center;
+}
+
+.brand-icon {
+  color: #4db6ff;
+}
+
+.brand-title {
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  line-height: 1.1;
+}
+
+.brand-subtitle {
+  font-size: 12px;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 8px;
+}
+
+.nav a {
+  color: rgba(255, 255, 255, 0.88);
+  border-radius: 10px;
+  margin: 2px 6px;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.nav a.active,
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: #fff;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.nav-help {
+  padding: 12px 14px 18px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.nav-help-title {
+  font-size: 12px;
+  opacity: 0.75;
+  margin-bottom: 8px;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.topbar-title {
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.topbar-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.95;
+}
+
+.meta-icon {
+  color: #bcdcff;
+}
+
+.meta-text {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.main-content {
+  padding: 18px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .app-sidenav {
+    width: 230px;
+  }
+
+  .mobile-menu {
+    display: inline-flex;
+  }
+}
+
